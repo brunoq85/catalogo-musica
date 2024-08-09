@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Song
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="table-responsive-sm">
+        <table class="table table-sm table-striped table-hover" id="example" class="display" style="width:100%">
+            <thead class="table-dark">
+                <tr>
+                    <th>Título</th>
+                    <th>Artista</th>
+                    <th>Álbum</th>
+                    <th>Gênero</th>
+                    <th>Ano de Lançamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for song in songs %}
+                <tr>
+                    <td>{{ song.title }}</td>
+                    <td>{{ song.artist }}</td>
+                    <td>{{ song.album }}</td>
+                    <td>{{ song.genre }}</td>
+                    <td>{{ song.release_year }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+
+
+
+{% endblock %}
